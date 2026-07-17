@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: fonts;
+  src: url(./tulls/3d_unicode.ttf);
+}
+
+body {
+  font-family: fonts;
+  background-color: rgba(255, 217, 0, 0.275);
+  width: 100%;
+}
+
+h1 {
+  color: rgb(162, 2, 2);
+  font-size: 100px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 80px;
+}
+p {
+  font-size: 50px;
+}
+
+.custom-audio {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: hidden;
+}
+
+header {
+  background-image: url(./tulls/61EtZpjYn9L._AC_UF894\,1000_QL80_.jpg);
+  background-position: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 900px;
+  width: 100%;
+}
+
+.header_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 70px;
+  padding: 100px;
+  height: 100%;
+}
+
+.header_text p {
+  text-align: center;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px 30px;
+}
+
+.desc_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px black;
+  padding: 100px;
+}
+
+.plan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+  gap: 30px;
+}
+
+.plan div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px black;
+  padding: 50px;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  height: 1300px;
+}
+
+.map iframe {
+  height: 700px;
+  width: 700px;
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  h4 {
+    font-size: 60px;
+  }
+  p {
+    font-size: 40px;
+  }
+
+  .plan div {
+    height: 500px;
+  }
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 30px;
+  }
+
+  .plan div {
+    height: 300px;
+  }
+
+  .map {
+    height: 1000px;
+  }
+
+  .map iframe {
+    height: 400px;
+    width: 400px;
+  }
+}
