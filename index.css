@@ -63,7 +63,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px 30px;
+  padding: 0 20px;
 }
 
 .desc_text {
@@ -90,7 +90,7 @@ header {
   background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
   background-size: cover;
   background-position: 100%;
-  padding: 50px;
+  padding: 0 20px;
   box-shadow: 10px 10px 10px black;
   border-radius: 10px;
 }
@@ -107,7 +107,7 @@ header {
 }
 
 .map_all {
-  margin: 30px;
+  padding: 0 20px;
 }
 
 .map {
@@ -175,5 +175,9 @@ header {
   .map iframe {
   height:200px;
   width: 80%;
+}
+
+.map_all .map h1{
+  font-size: 40px;
 }
 }
