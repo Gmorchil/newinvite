@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: fonts;
-  src: url(./tulls/bpg_nuskha_modern.ttf);
+  src: url(./tulls/DM-Galaktioni-UNI-180426073.ttf);
 }
 
 body {
@@ -157,13 +157,13 @@ header {
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 40px;
+    font-size: 45px;
   }
   h4 {
-    font-size: 30px;
+    font-size: 35px;
   }
   p {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   header {
@@ -174,7 +174,7 @@ header {
 
   .header_text {
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
   }
 .map {
   height: 600px;
