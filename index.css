@@ -11,22 +11,22 @@
 
 body {
   font-family: fonts;
-  background-color: rgba(255, 217, 0, 0.275);
   width: 100%;
 }
 
 h1 {
-  color: rgb(162, 2, 2);
-  font-size: 100px;
+  color: goldenrod;
+  font-size: 90px;
   text-align: center;
 }
 
 h4 {
-  font-size: 80px;
+  font-size: 70px;
   text-align: center;
 }
 p {
-  font-size: 50px;
+  font-size: 37px;
+  text-align: center;
 }
 
 .custom-audio {
@@ -37,26 +37,25 @@ p {
 }
 
 header {
-  background-image: url(./tulls/61EtZpjYn9L._AC_UF894\,1000_QL80_.jpg);
-  background-position: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 900px;
   width: 100%;
+  padding: 0 20px;
 }
 
 .header_text {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
-  gap: 70px;
-  padding: 100px;
+  padding: 5%;
   height: 100%;
-}
-
-.header_text p {
-  text-align: center;
+  gap: 50px;
+  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1\ -\ Copy.jpeg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px black;
 }
 
 .description {
@@ -68,13 +67,14 @@ header {
 }
 
 .desc_text {
+  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1\ -\ Copy.jpeg);
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 30px;
   border: none;
-  background-color: white;
   border-radius: 20px;
   box-shadow: 10px 10px 10px black;
   padding: 100px;
@@ -85,8 +85,14 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 50px;
+  margin: 30px;
   gap: 30px;
+  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
+  background-size: cover;
+  background-position: 100%;
+  padding: 50px;
+  box-shadow: 10px 10px 10px black;
+  border-radius: 10px;
 }
 
 .plan div {
@@ -95,10 +101,13 @@ header {
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  background-color: white;
   border-radius: 20px;
   box-shadow: 10px 10px 10px black;
   padding: 50px;
+}
+
+.map_all {
+  margin: 30px;
 }
 
 .map {
@@ -108,6 +117,10 @@ header {
   flex-direction: column;
   gap: 30px;
   height: 1300px;
+  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1\ -\ Copy.jpeg);
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px black;
 }
 
 .map iframe {
@@ -117,59 +130,50 @@ header {
   border: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   h1 {
-    font-size: 80px;
-  }
-
-  h4 {
     font-size: 60px;
   }
-  p {
-    font-size: 40px;
-  }
-
-  .plan div {
-    height: 500px;
-  }
-header {
-
-  height: 800px;
-}
-  .header_text {
-  gap: 50px;
-  padding: 70px;
-
-}
-
-.desc_text {
-
-  padding: 50px;
-}
-}
-
-@media (max-width: 700px) {
-  h1 {
-    font-size: 40px;
-  }
-
   h4 {
+    font-size: 50px;
+  }
+  p {
     font-size: 30px;
+  }
+
+  .header_text {
+    background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
+    background-size: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 50px;
+  }
+  h4 {
+    font-size: 40px;
   }
   p {
     font-size: 20px;
   }
 
-  .plan div {
-    height: 300px;
+  header {
+    height: 800px;
+    width: 100%;
+    padding: 0 20px;
   }
 
-  .map {
-    height: 1000px;
+  .header_text {
+    justify-content: center;
+    gap: 100px;
   }
+.map {
+  height: 600px;
 
+}
   .map iframe {
-    height: 400px;
-    width: 400px;
-  }
+  height:200px;
+  width: 80%;
+}
 }
