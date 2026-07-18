@@ -81,15 +81,18 @@ header {
   padding: 5%;
 }
 
-.plan {
+.plan{
+  padding: 20px;
+}
+.plan_box{
+    background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
+  background-size: cover; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-block-start: 30px;
   gap: 30px;
-  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
-  background-size: cover;
   background-position: 100%;
   padding: 20px;
   box-shadow: 10px 10px 10px black;
@@ -97,6 +100,7 @@ header {
 }
 
 .plan div {
+
   display: flex;
   justify-content: center;
   align-items: center;
