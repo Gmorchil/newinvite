@@ -23,6 +23,7 @@ h1 {
 
 h4 {
   font-size: 80px;
+  text-align: center;
 }
 p {
   font-size: 50px;
@@ -133,12 +134,17 @@ header {
   }
 header {
 
-  height: 700px;
+  height: 800px;
 }
   .header_text {
   gap: 50px;
   padding: 70px;
 
+}
+
+.desc_text {
+
+  padding: 50px;
 }
 }
 
