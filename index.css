@@ -131,18 +131,27 @@ header {
   .plan div {
     height: 500px;
   }
+header {
+
+  height: 700px;
+}
+  .header_text {
+  gap: 50px;
+  padding: 70px;
+
+}
 }
 
 @media (max-width: 700px) {
   h1 {
-    font-size: 60px;
+    font-size: 40px;
   }
 
   h4 {
-    font-size: 40px;
+    font-size: 30px;
   }
   p {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .plan div {
