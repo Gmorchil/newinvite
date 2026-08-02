@@ -6,12 +6,192 @@
 
 @font-face {
   font-family: fonts;
+
   src: url(./tulls/DM-Galaktioni-UNI-180426073.ttf);
 }
 
-body {
+body,
+html {
   font-family: fonts;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Full Screen Container */
+
+.invitation-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #f9f8f6 0%, #ece8e1 100%);
+}
+
+/* Envelope Wrapper */
+
+.envelope-wrapper {
+  position: absolute;
+  width: 90%;
+  max-width: 100%;
+  height: 100%;
+  transition:
+    transform 1.2s ease,
+    opacity 1s ease;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e3decb;
+  overflow: hidden;
+}
+
+/* Botanical Accents mimicking the reference image */
+
+.botanical-corner {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Using elegant CSS gradients/placeholders to mimic the green calla lily/leaves aesthetic */
+
+.top-right {
+  bottom: 0;
+  right: 0;
+  background-image: url(./tulls/top_left.jpeg);
+  background-position: right;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background-image: url(./tulls/left_bottom.jpeg);
+}
+
+/* Envelope Flap */
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #f7f5ef;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 0.8s ease-in-out;
+  z-index: 5;
+  border-bottom: 1px solid #e3decb;
+}
+
+/* Green Wax Seal with G&A */
+
+.wax-seal {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(./tulls/d958e860-587a-4f67-a782-4e48b1c283e6-removebg-preview.png);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  z-index: 6;
+  transition:
+    transform 0.3s ease,
+    opacity 0.5s ease;
+}
+
+.wax-seal span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* --- OPENED STATES --- */
+
+.envelope-wrapper.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope-wrapper.open .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  pointer-events: none;
+}
+
+.envelope-wrapper.open .letter-preview {
+  transform: translateY(-160px);
+  z-index: 4;
+}
+
+.envelope-wrapper.open {
+  transform: scale(1.05);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 1s ease 0.6s,
+    opacity 0.8s ease 0.6s;
+}
+
+/* Full Invitation Content (Revealed after envelope vanishes) */
+
+.full-invitation-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;   /* <-- added: stack sections vertically */
+  justify-content: flex-start;
+  align-items: center;      /* <-- was flex-start, center looks better for column layout */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 1s ease 1s,
+    transform 1s ease 1s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content-inner {
+    text-align: center;
+    padding: 40px;
+    max-width: 700px;
+}
+
+.full-invitation-content.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 h1 {
@@ -24,6 +204,7 @@ h4 {
   font-size: 70px;
   text-align: center;
 }
+
 p {
   font-size: 37px;
   text-align: center;
@@ -34,11 +215,10 @@ p {
   max-width: 400px;
   margin: 20px auto;
   display: none;
-
 }
 
 header {
-  height: 900px;
+  height: 100vh;
   width: 100%;
   padding: 0 20px;
 }
@@ -51,25 +231,20 @@ header {
   padding: 5%;
   height: 100%;
   gap: 50px;
-  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1\ -\ Copy.jpeg);
+  background-image: url(./tulls/IMG_8110.jpeg);
   background-position: top;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   border-radius: 20px;
   box-shadow: 10px 10px 10px black;
 }
 
 .description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 20px;
-  margin-block-start: 30px;
 }
 
 .desc_text {
-  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1\ -\ Copy.jpeg);
+  background-image: url(./tulls/IMG_8110\ -\ Copy.jpeg);
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
@@ -82,12 +257,13 @@ header {
   padding: 5%;
 }
 
-.plan{
+.plan {
   padding: 20px;
 }
-.plan_box{
-    background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
-  background-size: cover; 
+
+.plan_box {
+  background-image: url(./tulls/IMG_8110.jpeg);
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +277,6 @@ header {
 }
 
 .plan div {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +298,7 @@ header {
   flex-direction: column;
   gap: 30px;
   height: 1300px;
-  background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1\ -\ Copy.jpeg);
+  background-image: url(./tulls/IMG_8110\ -\ Copy.jpeg);
   background-repeat: no-repeat;
   border-radius: 20px;
   box-shadow: 10px 10px 10px black;
@@ -150,7 +325,7 @@ header {
   }
 
   .header_text {
-    background-image: url(./tulls/1af47ad3-f1e0-4b9e-bfea-7199c73d40d1.jpeg);
+    background-image: url(./tulls/IMG_8110\ -\ Copy.jpeg);
     background-size: cover;
   }
 }
@@ -167,22 +342,32 @@ header {
   }
 
   header {
-    height: 800px;
+    height: 700px;
     width: 100%;
     padding: 0 20px;
   }
 
   .header_text {
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
+    background-image: url(./tulls/IMG_8110.jpeg);
   }
-.map {
-  height: 600px;
 
-}
+  .desc_text {
+    background-image: url(./tulls/IMG_8110.jpeg);
+    background-size: cover;
+  }
+
+  .map {
+    height: 600px;
+    background-image: url(./tulls/IMG_8110.jpeg);
+    background-size: cover;
+    background-position: bottom;
+  }
+
   .map iframe {
-  height:250px;
-  width: 90%;
-}
+    height: 250px;
 
+    width: 90%;
+  }
 }
