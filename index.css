@@ -367,7 +367,12 @@ header {
 
   .map iframe {
     height: 250px;
-
     width: 90%;
   }
+
+  .top-right {
+  background-image: none;
+
+}
+
 }
