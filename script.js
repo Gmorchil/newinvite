@@ -20,14 +20,12 @@ document.querySelectorAll(".plan-item").forEach((item) => {
     });
 
     const targetClass = item.getAttribute("data-target");
-    document.querySelector("." + targetClass).classList.add("active");
+
     const targetElement = document.querySelector("." + targetClass);
 
     if (targetElement) {
-      // Add 'active' class to the target section
       targetElement.classList.add("active");
 
-      // Scroll smoothly down to the target element
       targetElement.scrollIntoView({
         behavior: "smooth",
         block: "end",
