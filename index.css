@@ -361,7 +361,7 @@ header {
     background-size: cover;
   }
 
-  .map .photo,
+  .map, .photo,
   .sign,
   .eng {
     height: 600px;
