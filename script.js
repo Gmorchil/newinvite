@@ -13,17 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-document.querySelectorAll('.plan-item').forEach(item => {
-  item.addEventListener('click', () => {
-    // Hide all map sections
-    document.querySelectorAll('.map_all').forEach(section => {
-      section.classList.remove('active');
+document.querySelectorAll(".plan-item").forEach((item) => {
+  item.addEventListener("click", () => {
+    document.querySelectorAll(".map_all").forEach((section) => {
+      section.classList.remove("active");
     });
 
-    // Show the target section
-    const targetClass = item.getAttribute('data-target');
-    document.querySelector('.' + targetClass).classList.add('active');
+    const targetClass = item.getAttribute("data-target");
+    document.querySelector("." + targetClass).classList.add("active");
+    const targetElement = document.querySelector("." + targetClass);
+
+    if (targetElement) {
+      // Add 'active' class to the target section
+      targetElement.classList.add("active");
+
+      // Scroll smoothly down to the target element
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }
   });
 });
