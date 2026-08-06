@@ -275,7 +275,10 @@ header {
   padding: 20px;
 }
 
-.map {
+.map,
+.photo,
+.sign,
+.eng {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -290,12 +293,32 @@ header {
   margin-block-start: 30px;
 }
 
-.map iframe {
+.map iframe,
+.photo iframe,
+.sign iframe,
+.eng iframe {
   height: 400px;
   width: 90%;
   border-radius: 5px;
   border: none;
 }
+
+
+
+.map_all {
+  display: none; /* Hidden by default */
+}
+
+.map_all.active {
+  display: block; /* Show when active */
+}
+
+.plan-item {
+  cursor: pointer; /* Makes it clear they are clickable */
+  transition: 0.3s;
+}
+
+
 
 @media (max-width: 1024px) {
   h1 {

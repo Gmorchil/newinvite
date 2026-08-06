@@ -12,3 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1200); // Matches envelope exit timing
   });
 });
+
+
+
+document.querySelectorAll('.plan-item').forEach(item => {
+  item.addEventListener('click', () => {
+    // Hide all map sections
+    document.querySelectorAll('.map_all').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    // Show the target section
+    const targetClass = item.getAttribute('data-target');
+    document.querySelector('.' + targetClass).classList.add('active');
+  });
+});
