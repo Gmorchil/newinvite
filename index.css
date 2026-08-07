@@ -17,6 +17,12 @@ html {
   height: 100%;
   overflow: hidden;
   background-color: white;
+ scroll-behavior: smooth;
+}
+
+a{
+  color:black;
+  text-decoration: none;
 }
 
 /* Full Screen Container */
@@ -258,18 +264,30 @@ header {
   box-shadow: 10px 10px 10px black;
   border-radius: 10px;
   width: 90%;
+  box-sizing: border-box;
 }
-.plan div {
+
+.plan_box a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.plan-item {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   border-radius: 20px;
   box-shadow: 10px 10px 10px black;
-  padding: 5%;
-  width: 90%;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+
 
 .map_all {
   padding: 20px;
@@ -314,6 +332,7 @@ header {
 .plan-item {
   cursor: pointer; /* Makes it clear they are clickable */
   transition: 0.3s;
+  width: 80%;
 }
 
 @media (max-width: 1024px) {

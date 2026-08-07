@@ -13,23 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelectorAll(".plan-item").forEach((item) => {
-  item.addEventListener("click", () => {
-    document.querySelectorAll(".map_all").forEach((section) => {
-      section.classList.remove("active");
+
+
+document.querySelectorAll('.plan-item').forEach(item => {
+  item.addEventListener('click', () => {
+    
+    document.querySelectorAll('.map_all').forEach(section => {
+      section.classList.remove('active');
     });
 
-    const targetClass = item.getAttribute("data-target");
-
-    const targetElement = document.querySelector("." + targetClass);
-
-    if (targetElement) {
-      targetElement.classList.add("active");
-
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "end",
-      });
-    }
+ 
+    const targetClass = item.getAttribute('data-target');
+    document.querySelector('.' + targetClass).classList.add('active');
+    
   });
 });
